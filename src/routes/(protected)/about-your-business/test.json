@@ -1,0 +1,89 @@
+[
+    {
+        "uploadMerchantDataForm": 1
+    },
+    {
+        "id": 2,
+        "valid": 3,
+        "posted": 4,
+        "errors": 5,
+        "data": 10,
+        "constraints": 17
+    },
+    "xavqeo",
+    false,
+    true,
+    {
+        "description": 6,
+        "address1": 8
+    },
+    [
+        7
+    ],
+    "Please fill in the description",
+    [
+        9
+    ],
+    "Please fill in the merchant address",
+    {
+        "merchantTypeId": 11,
+        "merchantName": 12,
+        "description": 11,
+        "address1": 11,
+        "address2": -1,
+        "city": 13,
+        "country": 14,
+        "postcode": 15,
+        "avatarImageUrl": 16
+    },
+    "",
+    "Soren merchant",
+    "wgwgwegwewegwe  23",
+    "Romanina",
+    "43534534",
+    "https://zulzi-dev-public.s3.eu-north-1.amazonaws.com/259cce4c-92d6-4c28-b56c-4330c6c377c6/blob",
+    {
+        "merchantTypeId": 18,
+        "merchantName": 19,
+        "description": 21,
+        "address1": 22,
+        "city": 23,
+        "country": 24,
+        "postcode": 25,
+        "avatarImageUrl": 27
+    },
+    {
+        "required": 4
+    },
+    {
+        "minlength": 20,
+        "required": 4
+    },
+    1,
+    {
+        "minlength": 20,
+        "required": 4
+    },
+    {
+        "minlength": 20,
+        "required": 4
+    },
+    {
+        "minlength": 20,
+        "required": 4
+    },
+    {
+        "minlength": 20,
+        "required": 4
+    },
+    {
+        "pattern": 26,
+        "minlength": 20,
+        "required": 4
+    },
+    "^\\d+$",
+    {
+        "minlength": 20,
+        "required": 4
+    }
+]

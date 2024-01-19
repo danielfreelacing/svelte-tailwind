@@ -1,0 +1,5 @@
+mutation userChangePassword($req: ReqUserChangePassword!) {
+	userChangePassword(req: $req) {
+		isSuccess
+	}
+}

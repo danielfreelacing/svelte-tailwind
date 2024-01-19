@@ -1,0 +1,38 @@
+
+# Use this image as the platform to build the app
+FROM node:20.9.0-alpine AS portal-webapp
+
+# A small line inside the image to show who made it
+LABEL Developers="Soren Gannik"
+
+# The WORKDIR instruction sets the working directory for everything that will happen next
+ENV home /usr
+WORKDIR ${HOME}/app
+
+
+COPY package.json .
+
+
+# Copy all local files into the image
+RUN npm install
+
+# Clean install all node modules
+# RUN npm ci
+RUN mkdir node_modules/.cache && chmod -R 777 node_modules/.cache
+COPY . .
+
+# Build SvelteKit app
+RUN npm run build
+
+CMD ["npm", "run", "start"]
+# RUN mkdir node_modules/.cache && chmod -R 777 node_modules/.cache
+
+
+# Delete source code files that were used to build the app that are no longer needed
+
+# The USER instruction sets the user name to use as the default user for the remainder of the current stage
+
+
+# This is the command that will be run inside the image when you tell Docker to start the container
+# CMD ["npm run preview"]
+# ENTRYPOINT ["/home/app"]

@@ -1,0 +1,64 @@
+import { derived, writable } from 'svelte/store'
+// import SomeOtherStore from '$stores/otherstore.js'
+import { page } from '$app/stores'
+import type { MenuType } from '$lib/components/menu/types';
+
+
+let menu_items:MenuType[] = [
+    {
+        name: 'summer menu'
+    },
+    {
+        name: 'autumn menu'
+    }
+];
+
+
+const initialState = {
+    loading: true,
+    items: [],
+    param: null,
+}
+
+const createPageStore = () => {
+    // Create main store since derived store cannot be updated, set initial state
+    const mainStore = writable(initialState)
+    const { update } = mainStore
+
+    // instantiate other store needed to construct page state
+    // const someOtherStore = SomeOtherStore()
+
+    function someKindOfFunctionModifyingState() {
+        // Need to update the state of items derived from SomeOtherStore, but the items do not exist here as the state was not propagated to the main store
+        update(state => {
+            return {
+                ...state,
+                items: state.items.map(stringItem => stringItem.capitalizeFirst())
+            }
+        })
+    }
+
+    // combine stores in order to construct page state
+    const { subscribe } = derived([mainStore, page, someOtherStore], ([$mainStore, $page, $someOtherStore]) => {
+        const { someItems, loading } = $someOtherStore
+        
+        return {
+            ...$mainStore,
+            loading: $mainStore.loading || loading,
+            param: $page.url.searchParams.get('param'),
+            items: someItems,
+        }
+    })
+
+    return {
+        someKindOfFunctionModifyingState,
+        // return subscribe method from derived store
+        subscribe,
+    }
+}
+
+let instance
+
+export default function PageStore() {
+    return instance ?? (instance = createPageStore())
+}

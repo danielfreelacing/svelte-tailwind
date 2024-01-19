@@ -1,0 +1,5 @@
+mutation staffDelete($req: ReqStaffDelete!) {
+	staffDelete(req: $req) {
+		isSuccess
+	}
+}

@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+	@font-face {
+		font-family: 'Poppins';
+		src: local('Poppins'), local('poppins'), local('Poppins'),
+			url('/fonts/poppins/Poppins-Regular.woff2');
+		font-weight: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Poppins';
+		src: local('Poppins Bold'), local('poppins-Bold'), local('Poppins bold'),
+			local('poppins-bold'), url('/fonts/poppins/Poppins-SemiBold.woff2');
+		font-weight: bold;
+		font-display: swap;
+	}
+
+	/* Chrome, Safari, Edge, Opera */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	.no-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	/* Firefox */
+	input[type=number] {
+		-moz-appearance: textfield;
+	}
+
+	body {
+		height: 100vh;
+		min-height: 100%;
+	}
+
+	html {
+		overflow: scroll;
+		height: 100vh;
+		scrollbar-width: thin;
+	}
+
+	input:autofill {
+		background: #fff;
+		/* or any other */
+		color: #71717A;
+	}
+
+	input {
+		filter: none;
+
+	}
+
+	@media not all and (min-width: 640px) {
+		.selectivemobilehide {
+			display: none;
+		}
+	}
+
+	/* Remove chrome autofill color from inputs*/
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus,
+	input:-webkit-autofill:active {
+		transition: background-color 5000000s ease-in-out 0s;
+	}
+
+	/* * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  } */
+
+	textarea:focus,
+	input:focus {
+		outline: none;
+	}
+
+	:root {
+
+
+		--color-brand-brand-2: #cb311a;
+		--color-brand-brand-3: #d43d27;
+		--color-brand-brand-4: #ee543e;
+		--color-brand-brand-5: #f85f49;
+		--color-brand-brand-tr-10: #cb311a1a;
+		--color-neutrals-neutral-0: #ffffff;
+		--color-neutrals-neutral-0-20: #ffffff33;
+		--color-neutrals-neutral-0-60: #ffffff99;
+		--color-neutrals-neutral-100: #f8f8f9;
+		--color-neutrals-neutral-200: #e8e8e8;
+		--color-neutrals-neutral-300: #b3b5c0;
+		--color-neutrals-neutral-400: #84868e;
+		--color-neutrals-neutral-500: #2a2c33;
+		--color-neutrals-neutral-600: #1a1b1f;
+		--color-neutrals-neutral-600-20: #1a1b1f12;
+		--color-secondary-secondary-2: #0b2e71;
+		--color-secondary-secondary-3: #1b45ad;
+		--color-secondary-secondary-4: #3662b5;
+		--color-secondary-secondary-5: #5081e4;
+		--color-secondary-secondary-tr-10: #5081E41A;
+		--color-system-error: #ed4f45;
+		--color-system-error-subtle: #ed4f451a;
+		--color-system-success: #51b467;
+		--color-system-success-subtle: #51b4671a;
+		--color-system-warning: #ffb018;
+		--color-system-warning-subtle: #ffb0181a;
+		/* numbers */
+		--numbers-xs: 0.25rem;
+		--numbers-s: 0.5rem;
+		--numbers-m: 0.75rem;
+		--numbers-ml: 1rem;
+		--numbers-l: 1.25rem;
+		--numbers-xl: 1.5rem;
+		--numbers-xxl: 2rem;
+		--numbers-max: 6249.9375rem;
+
+		--background: 0 0% 100%;
+		--foreground: 240 10% 3.9%;
+
+		--muted: 240 4.8% 95.9%;
+		--muted-foreground: 240 3.8% 46.1%;
+
+		--popover: 0 0% 100%;
+		--popover-foreground: 240 10% 3.9%;
+
+		--card: 0 0% 100%;
+		--card-foreground: 240 10% 3.9%;
+
+		--border: 240 5.9% 90%;
+		--input: 240 5.9% 90%;
+
+		--primary: 240 5.9% 10%;
+		--primary-foreground: 0 0% 98%;
+
+		--secondary: 240 4.8% 95.9%;
+		--secondary-foreground: 240 5.9% 10%;
+
+		--accent: 240 4.8% 95.9%;
+		--accent-foreground: 240 5.9% 10%;
+
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 0 0% 98%;
+
+		--ring: 240 10% 3.9%;
+
+		--radius: 0.5rem;
+	}
+
+	.dark {
+		--background: 240 10% 3.9%;
+		--foreground: 0 0% 98%;
+
+		--muted: 240 3.7% 15.9%;
+		--muted-foreground: 240 5% 64.9%;
+
+		--popover: 240 10% 3.9%;
+		--popover-foreground: 0 0% 98%;
+
+		--card: 240 10% 3.9%;
+		--card-foreground: 0 0% 98%;
+
+		--border: 240 3.7% 15.9%;
+		--input: 240 3.7% 15.9%;
+
+		--primary: 0 0% 98%;
+		--primary-foreground: 240 5.9% 10%;
+
+		--secondary: 240 3.7% 15.9%;
+		--secondary-foreground: 0 0% 98%;
+
+		--accent: 240 3.7% 15.9%;
+		--accent-foreground: 0 0% 98%;
+
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 0 0% 98%;
+
+		--ring: 240 4.9% 83.9%;
+	}
+
+
+}
